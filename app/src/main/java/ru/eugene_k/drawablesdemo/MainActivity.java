@@ -1,4 +1,4 @@
-package ru.dimasokol.drawablesdemo;
+package ru.eugene_k.drawablesdemo;
 
 import android.animation.ValueAnimator;
 import android.app.Activity;
