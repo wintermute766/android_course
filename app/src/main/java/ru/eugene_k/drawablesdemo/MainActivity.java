@@ -9,7 +9,7 @@ import android.view.animation.DecelerateInterpolator;
 public class MainActivity extends Activity {
 
     // Первый и второй вью, на которых мы будем анимировать фон
-    private View mFirstAnimatedView, mSecondAnimatedView;
+    private View mFirstAnimatedView;
     // Аниматор фона, общий на двоих
     private ValueAnimator mAnimator;
 
@@ -19,7 +19,6 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         mFirstAnimatedView = findViewById(R.id.first_animated_view);
-        mSecondAnimatedView = findViewById(R.id.second_animated_view);
 
         // Создаём аниматор
         mAnimator = ValueAnimator.ofInt(0, 10000);
@@ -32,7 +31,6 @@ public class MainActivity extends Activity {
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
                 Integer value = (Integer) valueAnimator.getAnimatedValue();
                 mFirstAnimatedView.getBackground().setLevel(value);
-                mSecondAnimatedView.getBackground().setLevel(value);
             }
         });
         mAnimator.start();
